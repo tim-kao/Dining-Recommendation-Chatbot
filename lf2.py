@@ -50,8 +50,6 @@ def lambda_handler(event, context):
     # Poll requests from SQS
 
     slot = sqs_handlder()
-    print(slot)
-
     """
     slot = {
         'cuisine': {
@@ -64,8 +62,8 @@ def lambda_handler(event, context):
         },
         'phoneNumber': {
             'DataType': 'String',
-            #'StringValue': '+886919525750'
-            'StringValue': 'savikx@gmail.com'
+            'StringValue': '+886919525750'
+            #'StringValue': 'savikx@gmail.com'
         },
         'ppl': {
             'DataType': 'String',
@@ -86,10 +84,14 @@ def lambda_handler(event, context):
         response = requests.get(query_es, auth=HTTPBasicAuth(username, password))
         restaurants = response.json()
         text_message = message_helper(restaurants, slot)
-        print(text_message)
-        # email_handler(text_message, 'sk4920@columbia.edu')
-        # print(slot)
+
+        print(slot)
+
+        print("send to", slot['email'], text_message)
+        email_handler(text_message, slot['email']['StringValue'])
+        print("send to", slot['phoneNumber'], text_message)
         sns_handler(text_message, slot['phoneNumber']['StringValue'])
+
     else:
         print("No message available in SQS.")
 
