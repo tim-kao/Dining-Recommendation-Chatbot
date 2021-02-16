@@ -3,6 +3,11 @@
 ## Overview ##
 Customer Service is a core service for a lot of businesses around the world and it is getting disrupted at the moment by Natural Language Processing-powered applications. The [Dining Concierge Chatbot](https://cloud-assignment1-bucket.s3.amazonaws.com/chat.html) is a serverless, microservice-driven web application that sends customers restaurant suggestions given a set of preferences that they provide the chatbot with through conversation. 
 
+## Demo ##
+![image](https://github.com/jyincheng/Dining-Recommendation-Chatbot/blob/main/demo_1.png)
+![image](https://github.com/jyincheng/Dining-Recommendation-Chatbot/blob/main/demo_2.png)
+![image](https://github.com/jyincheng/Dining-Recommendation-Chatbot/blob/main/demo_3.png)
+![image](https://github.com/jyincheng/Dining-Recommendation-Chatbot/blob/main/demo_4.png)
 
 ## Application (Language & Tools) ##
 1) Frontend: CSS, HTML, JavaScript
@@ -46,12 +51,10 @@ Customer Service is a core service for a lot of businesses around the world and 
 #### 5) [Lambda](https://aws.amazon.com/lambda/) - LF1
 - Trigger to fulfill the recommendation by sending it to SQS for later processing after the conversation.
 
-#### 6) AWS Region: US-east-1 (N. Virginia)
-
-#### 7) [Simple Queue Servive] (https://console.aws.amazon.com/sqs/v2/home)
+#### 6) [Simple Queue Servive](https://console.aws.amazon.com/sqs/v2/home)
 - FIFO type.
 
-#### 8) [ElasticSearch](https://console.aws.amazon.com/es/home)
+#### 7) [ElasticSearch](https://console.aws.amazon.com/es/home)
 - 7000+ Yelp API cuisines data.
 - Store restaurants Key ID and cuisine types.
 
@@ -61,11 +64,16 @@ Customer Service is a core service for a lot of businesses around the world and 
 - Data columns: Business ID, Name, Address, Coordinates, Number of Reviews, Rating, Zip Code, and Phone number.
 
 #### 9) [Lambda](https://aws.amazon.com/lambda/) - LF2
-- Take request from SQS.
+- Take requests from SQS.
 - Retrieve key message and get key id by elasticsearch.
-- Use key as index to load data from dynamodB.
+- Use key as an index to load data from dynamodB.
 - Randomly select recommended restaurants.
-- Organize the data into message and deliver to users by both e-mail and phone.
+- Organize the data into a message and deliver it to users by both e-mail and phone.
+
+
+
+*AWS Region: US-east-1 (N. Virginia)
+
 
 ## Contributor ##
-#### [Yin Cheng](https://github.com/jyincheng)(UNI: cc4717), [Tim Kao](https://github.com/tim-kao) (UNI: sk4920)
+#### [Yin Cheng](https://github.com/jyincheng)(UNI: cc4717), [Tim Kao](https://github.com/tim-kao?fbclid=IwAR0lWAvmWe03EtuderoHdKEpYYG8pnl2ca1bN1b5DBfEMP-wFv4kQupl-Jg) (UNI: sk4920)
