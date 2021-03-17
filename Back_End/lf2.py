@@ -12,7 +12,7 @@ region = 'us-east-1'
 # The Amazon Pinpoint project/application ID to use when you send this message.
 # Make sure that the SMS channel is enabled for the project or application
 # that you choose.
-applicationId = '03cc4948f5e948cd92588ad09a6c624c'
+applicationId = ''
 
 # The type of SMS message that you want to send. If you plan to send
 # time-sensitive content, specify TRANSACTIONAL. If you plan to send
@@ -28,10 +28,10 @@ registeredKeyword = 'myKeyword'
 senderId = 'MySenderID'
 
 # elasticsearch path
-es_url = 'https://search-restaurants-mzwl7jz5j43kesh6unvvvouizu.us-east-1.es.amazonaws.com/restaurants/_search?q='
-username = 'tim'
-password = 'Windows2020;'
-random_seed = '1688'
+es_url = ''
+username = ''
+password = ';'
+random_seed = ''
 
 # dynamodb info
 dynamodb_table_name = 'yelp-restaurants'
@@ -234,7 +234,7 @@ def message_helper(data, slot):
 def email_handler(message, email_addr):
     # Replace sender@example.com with your "From" address.
     # This address must be verified with Amazon SES.
-    SENDER = 'sk4920@columbia.edu'
+    SENDER = '@columbia.edu'
 
     # If necessary, replace us-west-2 with the AWS Region you're using for Amazon SES.
     AWS_REGION = "us-east-1"
