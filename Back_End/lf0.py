@@ -2,7 +2,7 @@ import json
 import os
 import boto3
 
-
+# Core handler addresses messages and devlivers them to LEX
 def lambda_handler(event, context):
     user_id, text = get_info_from_request(event)
     if user_id is None or text is None:
